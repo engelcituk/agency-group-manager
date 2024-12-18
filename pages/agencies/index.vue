@@ -7,6 +7,16 @@ import { useStorage } from '@vueuse/core'
 const { startFullScreenLoading, stopFullScreenLoading } = useFullScreenLoadingStore()
 const { t } = useI18n()
 
+const countries = ref([])
+const agencies = ref([])
+
+const pageSize = ref(10)
+const currentPage = ref(1)
+const totalRecords = ref(0)
+const first = ref(0)
+
+const filtersOpen = ref(true)
+
 const filters = ref({
 	agency: '', 
   	country: '', 
@@ -14,8 +24,6 @@ const filters = ref({
   	status: true, 
 })
 
-const countries = ref([])
-const agencies = ref([])
 
 const fetchCountries = async () => {
 	const data = await $fetch('/api/countries', { server: false })
@@ -40,12 +48,13 @@ const getAgencies = async () => {
 	const { status, data } = await http('/api/agencies/agencies', {params: filter})
 
 	if(status){
+		console.log(data.length)
 		agencies.value = data
+		totalRecords.value = data.length
 	}
 	stopFullScreenLoading()
 }
 
-const filtersOpen = ref(true)
 
 const resetFilters = () => {
 	filters.value.agency = ''
@@ -62,36 +71,20 @@ const resetEmail = () => {
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const emailInvalid = ref(false)
 const validateEmail = () => {
-  emailInvalid.value = !emailPattern.test(filters.value.email)
+	emailInvalid.value = !emailPattern.test(filters.value.email)
 }
-
-const pageSize = ref(10)
-const currentPage = ref(1)
-const totalRecords = ref(0)
-const first = ref(0)
-
-const idFilter = ref(null)
 
 async function changePage (event) {
-  pageSize.value = event.rows
-  currentPage.value = event.page + 1
-  first.value = event.first
-  await getAgencies()
+	
+	pageSize.value = event.rows
+  	currentPage.value = event.page + 1
+  	first.value = event.first
+  	// await getAgencies()
 }
-
-async function searchReservations () {
-  if (firstReservationsLoad.value) return
-  currentPage.value = 1
-  first.value = 0
-  await getAgencies()
-}
-
-const reservations = ref([])
-const firstReservationsLoad = ref(true)
 
 
 onBeforeMount(() => {
-   resetFilters()
+	resetFilters()
 })
 onMounted(async () => {
 	// await fetchCountries()
@@ -173,9 +166,7 @@ onMounted(async () => {
 								:show-clear-button="true"
 							/>
 							
-						</div>
-				
-					
+						</div>					
 					</div>
 					<div class="flex justify-end mt-8">
 						<CustomButton
@@ -206,8 +197,7 @@ onMounted(async () => {
 				<DataTable
 					:value="agencies"
 					:global-filter-fields="['customer_name', 'customer_email', 'id']"
-					scrollable
-					lazy
+					scrollable					
 					paginator-template="RowsPerPageDropdown FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink"
 					:pt="{
 						root: { class: 'text-xs mt-8 overflow-x-hidden rounded' },

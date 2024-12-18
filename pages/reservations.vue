@@ -119,7 +119,7 @@ onBeforeMount(() => {
   resetFilters()
 })
 onMounted(async () => {
-  await fetchAgencies()
+  // await fetchAgencies()
 })
 </script>
 <template>

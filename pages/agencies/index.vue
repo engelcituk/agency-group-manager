@@ -193,8 +193,8 @@ onMounted(async () => {
 							icon
 							@click="getAgencies"
 						>
-							<div class="flex-center gap-1">
-								<span class="material-symbols-outlined">check</span>
+							<div class="flex-center gap-1">								
+								<span class="material-symbols-outlined">search</span>
 								<span>{{ $t('apply_filters') }}</span>
 							</div>
 						</CustomButton>

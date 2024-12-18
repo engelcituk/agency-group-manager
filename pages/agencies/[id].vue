@@ -122,13 +122,13 @@
                     <TabPanel :value="0">                        
                         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4" v-if="agency">
                             <div class="bg-white overflow-hidden">
-                                <div class="sm:px-6 py-2">
+                                <div class="py-2">
                                     <h3 class="text-lg leading-6 font-medium text-gray-900">
                                         {{ $t('general_info') }}
                                     </h3>                                            
                                 </div>
-                                <div class="border-gray-200 px-4 py-5 sm:p-0">
-                                    <div class="px-1 sm:px-6 py-1 text-sm">
+                                <div class="border-gray-200 py-2 sm:p-0">
+                                    <div class=" py-1 text-sm">
                                         <span class="text-gray-900 font-semibold">
                                             {{ $t('commercial_name')}}: 
                                         </span>
@@ -136,7 +136,7 @@
                                             {{agency.commercialName}}
                                         </span>
                                     </div>
-                                    <div class="px-1 sm:px-6 py-1 text-sm">
+                                    <div class=" py-1 text-sm">
                                         <span class="text-gray-900 font-semibold">
                                             {{ $t('bussines_name')}}:
                                         </span>
@@ -145,7 +145,7 @@
                                             {{agency.businessName}}
                                         </span>
                                     </div>
-                                    <div class="px-1 sm:px-6 py-1 text-sm">
+                                    <div class=" py-1 text-sm">
                                         <span class="text-gray-900 font-semibold">
                                             {{ $t('email') }}:
                                         </span>
@@ -153,7 +153,7 @@
                                             {{agency.commercialEmail}}
                                         </span>
                                     </div>
-                                    <div class="px-1 sm:px-6 py-1 text-sm">
+                                    <div class=" py-1 text-sm">
                                         <span class="text-gray-900 font-semibold">
                                             {{ $t('phone') }}:
                                         </span>
@@ -164,13 +164,13 @@
                                 </div>
                             </div>
                             <div class="bg-white overflow-hidden">
-                                <div class="px-1 sm:px-6 py-1">
+                                <div class=" py-1">
                                     <h3 class="text-lg leading-6 font-medium text-gray-900">
                                         {{ $t('address') }}
                                     </h3>                                            
                                 </div>
-                                <div class="border-gray-200 px-4 py-5 sm:p-0">
-                                    <div class="px-1 sm:px-6 py-1 text-sm">
+                                <div class="border-gray-200 py-2 sm:p-0">
+                                    <div class=" py-1 text-sm">
                                         <span class="text-gray-900 font-semibold">
                                             {{ $t('country') }}:
                                         </span>
@@ -178,7 +178,7 @@
                                             {{agency.countryCode}}
                                         </span>
                                     </div>
-                                    <div class="px-1 sm:px-6 py-1 text-sm">
+                                    <div class=" py-1 text-sm">
                                         <span class="text-gray-900 font-semibold">
                                             {{ $t('state') }}:
                                         </span>
@@ -186,7 +186,7 @@
                                             {{agency.statePlace}}
                                         </span>
                                     </div>
-                                    <div class="px-1 sm:px-6 py-1 text-sm">
+                                    <div class=" py-1 text-sm">
                                         <span class="text-gray-900 font-semibold">
                                             {{ $t('city') }}:
                                         </span>
@@ -194,7 +194,7 @@
                                             {{agency.cityPlace}}
                                         </span>
                                     </div>
-                                    <div class="px-1 sm:px-6 py-1 text-sm">
+                                    <div class=" py-1 text-sm">
                                         <span class="text-gray-900 font-semibold">
                                             {{ $t('address') }}:
                                         </span>
@@ -202,7 +202,7 @@
                                             {{agency.address}}
                                         </span>
                                     </div>
-                                    <div class="px-1 sm:px-6 py-1 text-sm">
+                                    <div class=" py-1 text-sm">
                                         <span class="text-gray-900 font-semibold">
                                             {{ $t('zip_code') }}:
                                         </span>
@@ -213,13 +213,13 @@
                                 </div>
                             </div>
                             <div class="bg-white overflow-hidden">
-                                <div class="px-1 sm:px-6 py-1">
+                                <div class=" py-1">
                                     <h3 class="text-lg leading-6 font-medium text-gray-900">
                                         {{ $t('documents') }}
                                     </h3>                                            
                                 </div>
-                                <div class="border-gray-200 px-4 py-5 sm:p-0">
-                                    <div class="px-1 sm:px-6 py-1 text-sm">
+                                <div class="border-gray-200 py-2 sm:p-0">
+                                    <div class=" py-1 text-sm">
                                         <span class="text-gray-900 font-semibold">
                                             {{ $t('document_type') }}:
                                         </span>
@@ -227,7 +227,7 @@
                                             {{agency.documentTypeId}}
                                         </span>
                                     </div>
-                                    <div class="px-1 sm:px-6 py-1 text-sm">
+                                    <div class=" py-1 text-sm">
                                         <span class="text-gray-900 font-semibold">
                                             {{ $t('document_number') }}:
                                         </span>
@@ -239,13 +239,13 @@
 
                             </div>
                             <div class="bg-white overflow-hidden">
-                                <div class="px-1 sm:px-6 py-1">
+                                <div class=" py-1">
                                     <h3 class="text-lg leading-6 font-medium text-gray-900">
                                         {{ $t('additional_info') }}
                                     </h3>                                            
                                 </div>
-                                <div class="border-gray-200 px-4 py-5 sm:p-0">
-                                    <div class="px-1 sm:px-6 py-1 text-sm">
+                                <div class="border-gray-200 py-2 sm:p-0">
+                                    <div class=" py-1 text-sm">
                                         <span class="text-gray-900 font-semibold">
                                             {{ $t('web_site') }}:
                                         </span>
@@ -253,7 +253,7 @@
                                             {{agency.website}}
                                         </span>
                                     </div>
-                                    <div class="px-1 sm:px-6 py-1 text-sm">
+                                    <div class=" py-1 text-sm">
                                         <span class="text-gray-900 font-semibold">
                                             {{ $t('status') }}:
                                         </span>
@@ -261,7 +261,7 @@
                                             {{agency.status}}
                                         </span>
                                     </div>
-                                    <div class="px-1 sm:px-6 py-1 text-sm">
+                                    <div class=" py-1 text-sm">
                                         <span class="text-gray-900 font-semibold">
                                             {{ $t('model_commission') }}:
                                         </span>
@@ -269,7 +269,7 @@
                                             {{agency.useCommissionModel}}
                                         </span>
                                     </div>
-                                    <div class="px-1 sm:px-6 py-1 text-sm">
+                                    <div class=" py-1 text-sm">
                                         <span class="text-gray-900 font-semibold">
                                             {{ $t('commission_discount') }}:
                                         </span>
@@ -311,124 +311,122 @@
                                             @clear="filters.phone = ''"
                                         />
                                     </div>
-                                    <div> 
-                                        <div class="flex  space-x-4" >
-                                            <button
-                                                class="flex items-center space-x-2 text-white px-1 py-2 rounded bg-red-500 hover:bg-red-600"
-                                                @click="clearFilter"
-                                            >                                        
-                                                <span class="material-symbols-outlined text-white">
-                                                    search
-                                                </span>                                        
-                                                <span>
-                                                    {{$t('clear_filters')}} 
-                                                </span>
-                                            </button>
-                                            <button
-                                                class="flex items-center space-x-2 text-white px-1 py-2 border border-white rounded hover:bg-white/10"
-                                                type="submit"
-                                            >                                        
-                                                <span class="material-symbols-outlined text-white">
-                                                    search
-                                                </span>                                        
-                                                <span>
-                                                    {{$t('search')}} 
-                                                </span>
-                                            </button>
-                                        </div>                            
-                                        
-                                    </div>
+                                    <div class="flex  space-x-4" >                                                                
+                                        <CustomButton
+                                            class="!bg-red-500 !py-1 text-white"
+                                            icon
+                                            @click="clearFilter"
+                                        >
+                                            <div class="flex-center gap-1">
+                                                <span class="material-symbols-outlined">ink_eraser</span>
+                                                <span class="hidden xl:block">{{ $t('clear_filters') }}</span>
+                                            </div>
+                                        </CustomButton>
+                                        <CustomButton
+                                            class="!bg-[--primary-bg-color] !py-1 ml-2 !border-gray-300 border !text-white"
+                                            icon                                                    
+                                            type="submit"
+                                        >
+                                            <div class="flex-center gap-1">
+                                                <span class="material-symbols-outlined">search</span>
+                                                <span class="hidden xl:block">{{ $t('search') }}</span>
+                                            </div>
+                                        </CustomButton>
+                                            
+                                    </div> 
                                 </div>
                             </div>
                         </form>
-                        <DataTable
-                            :value="agents"                            
-                            scrollable
-                            lazy
-                            paginator-template="RowsPerPageDropdown FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink"
-                            :pt="{
-                                root: { class: 'text-xs mt-8 overflow-x-hidden rounded' },
-                                table: { class: 'w-full border-2' },
-                                thead: { class: '!font-normal text-white text-xs text-center'}
-                            }"
-                            
-                        >
-                
-                            <Column
-                                field="agentId"
-                                class="min-w-[6rem]"
-                                header="#"
+                        <div class="grid">
+                            <DataTable
+                                :value="agents"                            
+                                scrollable
+                                lazy
+                                paginator-template="RowsPerPageDropdown FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink"
                                 :pt="{
-                                    headerContent: { class: 'font-normal text-center'},
-                                    headerTitle: { class: 'w-full'},
-                                    bodyCell: { class: 'text-center'}
+                                    root: { class: 'text-xs mt-8 overflow-x-hidden rounded' },
+                                    table: { class: 'w-full border-2' },
+                                    thead: { class: '!font-normal text-white text-xs text-center'}
                                 }"
-                            />
-                            <Column
-                                field="firstName"
-                                class="min-w-[12rem]"
-                                :header="$t('agent')"
-                                :pt="{
-                                headerContent: { class: 'font-normal text-center' },
-                                headerTitle: { class: 'w-full' }
-                                }"
+                                
                             >
-                                <template #body="slotProps">						
-                                    <nuxt-link 
-                                        :to="`/agents/${slotProps.data.agentId}`" 
-                                        class="hover:underline"
-                                        style="color: #4CB8C4;"
-                                    >
-                                        {{ slotProps.data.firstName }} {{ slotProps.data.lastName }}
-                                    </nuxt-link>
-                                </template>
-                            </Column>
-                            <Column
-                                field="email"
-                                class="min-w-[7rem]"
-                                :header="$t('email')"
-                                :pt="{
-                                    headerContent: { class: 'font-normal text-center'},
-                                    headerTitle: { class: 'w-full'},
-                                    bodyCell: { class: 'text-center'}
-                                }"
-                            />
-                            <Column
-                                field="phone"
-                                :header="$t('phone')"
-                                :pt="{
-                                    headerContent: { class: 'font-normal text-center'},
-                                    headerTitle: { class: 'w-full'},
-                                    bodyCell: { class: 'text-center'}
-                                }"
-                            />
-                            <Column
-                                field="country"
-                                class="min-w-[6rem]"
-                                :header="$t('country')"
-                                :pt="{
-                                    headerContent: { class: 'font-normal text-center'},
-                                    headerTitle: { class: 'w-full'},
-                                    bodyCell: { class: 'text-right'}
-                                }"
-                            />
-                            <Column
-                                field="status"
-                                class="min-w-[6rem]"
-                                :header="$t('status')"
-                            >
-                                <template #body="slotProps">
-                                    <span 
-                                        class="material-symbols-outlined"
-                                        :class="slotProps.data.status ? 'text-green-500' : 'text-red-500'"
-                                        style="font-size: 16px;"
-                                    >
-                                        {{ slotProps.data.status ? 'check_circle' : 'cancel' }}
-                                    </span>
-                                </template>
-                            </Column>
-                            
-                        </DataTable>
+                    
+                                <Column
+                                    field="agentId"
+                                    class="min-w-[6rem]"
+                                    header="#"
+                                    :pt="{
+                                        headerContent: { class: 'font-normal text-center'},
+                                        headerTitle: { class: 'w-full'},
+                                        bodyCell: { class: 'text-center'}
+                                    }"
+                                />
+                                <Column
+                                    field="firstName"
+                                    class="min-w-[12rem]"
+                                    :header="$t('agent')"
+                                    :pt="{
+                                    headerContent: { class: 'font-normal text-center' },
+                                    headerTitle: { class: 'w-full' }
+                                    }"
+                                >
+                                    <template #body="slotProps">						
+                                        <nuxt-link 
+                                            :to="`/agents/${slotProps.data.agentId}`" 
+                                            class="hover:underline"
+                                            style="color: #4CB8C4;"
+                                        >
+                                            {{ slotProps.data.firstName }} {{ slotProps.data.lastName }}
+                                        </nuxt-link>
+                                    </template>
+                                </Column>
+                                <Column
+                                    field="email"
+                                    class="min-w-[7rem]"
+                                    :header="$t('email')"
+                                    :pt="{
+                                        headerContent: { class: 'font-normal text-center'},
+                                        headerTitle: { class: 'w-full'},
+                                        bodyCell: { class: 'text-center'}
+                                    }"
+                                />
+                                <Column
+                                    field="phone"
+                                    :header="$t('phone')"
+                                    :pt="{
+                                        headerContent: { class: 'font-normal text-center'},
+                                        headerTitle: { class: 'w-full'},
+                                        bodyCell: { class: 'text-center'}
+                                    }"
+                                />
+                                <Column
+                                    field="country"
+                                    class="min-w-[6rem]"
+                                    :header="$t('country')"
+                                    :pt="{
+                                        headerContent: { class: 'font-normal text-center'},
+                                        headerTitle: { class: 'w-full'},
+                                        bodyCell: { class: 'text-right'}
+                                    }"
+                                />
+                                <Column
+                                    field="status"
+                                    class="min-w-[6rem]"
+                                    :header="$t('status')"
+                                >
+                                    <template #body="slotProps">
+                                        <span 
+                                            class="material-symbols-outlined"
+                                            :class="slotProps.data.status ? 'text-green-500' : 'text-red-500'"
+                                            style="font-size: 16px;"
+                                        >
+                                            {{ slotProps.data.status ? 'check_circle' : 'cancel' }}
+                                        </span>
+                                    </template>
+                                </Column>
+                                
+                            </DataTable>
+                        </div>
                     </TabPanel>
                 
                 </TabPanels>
@@ -436,6 +434,7 @@
         </CustomContainer>
     </div>
 </template>
+
 
 
 

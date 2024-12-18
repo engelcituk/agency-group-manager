@@ -44,11 +44,12 @@ const getAgencies = async () => {
 		country: filters.value.country, 
 		email: emailInvalid.value ? '' : filters.value.email, 
 		status: filters.value.status.id || true,  
+		PageNumber: currentPage.value,
+		PageSize: pageSize.value
 	}
 	const { status, data } = await http('/api/agencies/agencies', {params: filter})
 
-	if(status){
-		console.log(data.length)
+	if(status){		
 		agencies.value = data
 		totalRecords.value = data.length
 	}

@@ -24,24 +24,26 @@
     }
 
     const getCountries = async () => {
-        const { status, data } = await http(`/api/agencies/countries/`, )
+        const { status, data } = await http(`/api/agencies/countries/`)
         if( status){
             countries.value = data
         }        
     }
 
-    const setSelectedCountry = () => {
-        const country = countries.value.find( c => c.id === agency.value.countryPlaceId)        
-        country.value = country.id              
-    }
     
     const cancelUpdate = () => {        
         navigateTo(`/agencies/${ route.params.id }`)
     }
 
-    const updateAgency = ()=> {
+    const updateAgency = async ()=> {
         const payload = toRaw(agency.value)
         console.log('update', payload)
+        startFullScreenLoading()
+
+        const { status, data } = await http(`/api/agencies/updateAgency/`, payload)
+
+        stopFullScreenLoading()            
+      
     }
 
     onMounted(async () => {
@@ -119,19 +121,22 @@
                     </div>
 
                     <h3 class="text-xl leading-6 font-medium text-gray-900 my-4">{{ $t('address') }} </h3> 
-                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                        <div class="text-gray-900 py-2">
-   
-
-                            <CustomInput
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 items-center">
+                        <div class="text-gray-900">
+                            <label for="country" class="block text-[0.65rem] text-gray-900">{{ $t('country') }}</label>
+                            <select 
                                 v-model="agency.countryPlaceId"
-                                :label="$t('country')"
-                                :show-clear-button="true"
-                                @clear="agency.countryPlaceId = ''"
-                            />
-
+                                id="country" 
+                                class="w-full border-b-2 border-gray-800 bg-transparent focus:outline-none focus:border-black text-gray-900"
+                            >
+                            <option value="" disabled selected>{{ $t('choose_a_country') }}</option>
+                                <option v-for="country in countries" :key="country.id" :value="country.id">
+                                    {{ country.name }}
+                                </option>
+                            </select>                            
                         </div>
-                        <div class="text-gray-900 py-2">
+                        <div class="text-gray-900 py-3">
                             <CustomInput
                                 v-model="agency.statePlace"
                                 :label="$t('state')"
@@ -167,17 +172,34 @@
 
                     <h3 class="text-xl leading-6 font-medium text-gray-900 my-4">{{ $t('documents') }} </h3> 
                     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                        <div class="text-gray-900 py-2">
-                            <CustomInput
-                                v-model="agency.documentTypeId"
-                                :label="$t('document_type')"  
-                                :show-clear-button="true"
-                                @clear="agency.documentTypeId = ''"                          
-                            />
-                                
-                            <!-- <InputText type="text" v-model="value"  /> -->
+                        <div class="text-gray-900">
+                  
+                            <div class="text-gray-900 py-1">
+                                <label for="country" class="block text-[0.65rem] text-gray-900">{{ $t('country') }}</label>
+                                <select 
+                                    v-model="agency.documentTypeId"
+                                    id="country" 
+                                    class="w-full border-b-2 border-gray-800 bg-transparent focus:outline-none focus:border-black text-gray-900"
+                                >
+                                    <option value="0" disabled selected>{{$t('choose_an_option')}}</option>                                    
+                                    <option value="1">ABTA</option>
+                                    <option value="2">ACTA</option>
+                                    <option value="3">ARC</option>
+                                    <option value="4">ATOL</option>
+                                    <option value="5">CICMA</option>
+                                    <option value="6">CLIA</option>
+                                    <option value="7">IATA</option>
+                                    <option value="8">PCC</option>
+                                    <option value="9">RNT</option>
+                                    <option value="10">RP</option>
+                                    <option value="11">RUC</option>
+                                    <option value="12">TICO</option>
+                                    <option value="13">TIDS</option>
+                                    <option value="14">TRU</option>
+                                </select> 
+                            </div>
                         </div>
-                        <div class="text-gray-900 py-2">
+                        <div class="text-gray-900 py-3">
                             <CustomInput
                                 v-model="agency.documentNumber"
                                 :label="$t('document_number')"
@@ -218,8 +240,3 @@
         </CustomContainer>
     </div>
 </template>
-
-
-
-
-  

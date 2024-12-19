@@ -44,6 +44,7 @@ export default {
   reservation_holder: 'Titular de la reservación',
   last_name: 'Apellido',
   country: 'País',
+  select_a_country: 'Seleccione un País',
   contact_info: 'Información de contacto',
   agency: 'Agencia',
   agent: 'Agente',
@@ -289,5 +290,7 @@ export default {
   agency_group: 'Agency Group',
   commercial_phone: 'Télefono Comercial',
   commercial_email: 'Email Comercial',
+  choose_a_country: 'Seleccione un País',
+  choose_an_option: 'Elija una opción',
 
 }

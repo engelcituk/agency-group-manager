@@ -292,5 +292,7 @@ export default {
   commercial_email: 'Email Comercial',
   choose_a_country: 'Seleccione un País',
   choose_an_option: 'Elija una opción',
+  agent_updated_successfully: 'Agente actualizado correctamente',
+  update: 'Actualización',
 
 }

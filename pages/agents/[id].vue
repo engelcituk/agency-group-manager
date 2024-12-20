@@ -1,13 +1,14 @@
   
 <script setup>
     import { useRoute, useRouter } from 'vue-router'
-
     import { ref, onMounted } from 'vue'
+    import { useI18n } from 'vue-i18n'
     const { startFullScreenLoading, stopFullScreenLoading } = useFullScreenLoadingStore()
+    import { useToast } from "primevue/usetoast";
     const route = useRoute()
     const router = useRouter()
-
-    
+    const { t } = useI18n()
+    const toast = useToast()
     const agent = ref(null)
   
     const getAgentById = async () => {
@@ -38,9 +39,21 @@
         router.push({ path: `/agencies/${ agent?.value.agencyId }`, query: { tab: 1 } })
     }
 
-    const updateAgent = () => {
-        console.log(`Update`)
+ 
+    const updateAgent = async ()=> {
+        const payload = toRaw(agent.value) 
+        payload.status = payload.status === true ? 1 : 0 
+        startFullScreenLoading()
+        const { status } = await http(`/api/agencies/updateAgent/`, {
+            method: 'PUT', 
+            body: payload, 
+        })
+        if( status){            
+            toast.add({ severity: 'success', summary: t('update'), detail: t('agent_updated_successfully'), life: 3000 });
+        }
+        stopFullScreenLoading()  
     }
+
 
     onMounted(async () => {
         await getAgentById()
@@ -50,18 +63,22 @@
    
 <template>
 	<div class="flex-1 max-w-7xl">
-        
+        <Toast position="bottom-right"/>
 		<CustomContainer class=" p-8 ">
             <div class="flex justify-between items-center pb-4">
-                <div class="left-element flex items-center space-x-4 text-lef">
-                    <CustomButton
-						class="!bg-[#4CB8C4] !py-1 text-white"
-						icon
-					>
-                        <NuxtLink :to="`/agencies/${agent?.agencyId}`" class="flex-center gap-1">
-                            <span class="material-symbols-outlined">arrow_back</span>                        
-                        </NuxtLink>                                                    														
-					</CustomButton>
+                <div class="left-element flex items-center space-x-4 text-lef">                   
+                    <NuxtLink
+                        :to="`/agencies/${agent?.agencyId}?tab=1`"                        
+                        class="flex-center gap-1"
+                    >
+                        <CustomButton
+                            class="!bg-[#4CB8C4] !py-1 text-white"
+                            icon
+                        >
+                            <span class="material-symbols-outlined">arrow_back</span>                                                       														
+                        </CustomButton>                      
+                    </NuxtLink>                                                    														
+				
                     <h2 class="text-gray-900 font-semibold">{{  $t('edit') }} {{ $t('agent') }}</h2>                    
                 </div>
             
@@ -131,14 +148,18 @@
                             <small v-if="emailInvalid" class="text-red-500">{{ $t('invalid_email')}}</small>
                         </div>
 
-                        <!-- Tercer div -->
-                        <div class=" text-gray-900 p-4 ">
-                            <CustomSimpleSelect
+                
+                        <div class="text-gray-900 py-1">
+                            <label for="country" class="block text-[0.65rem] text-gray-900">{{ $t('profile_type') }}</label>
+                            <select 
                                 v-model="agent.profileTypeId"
-                                :label="$t('profile_type')"
-                                :options="[{ id: true, name: $t('active') }, { id: false, name: $t('inactive') }]"
-                                :show-clear-button="true"
-                            />                    
+                                id="country" 
+                                class="w-full border-b-2 border-gray-800 bg-transparent focus:outline-none focus:border-black text-gray-900"
+                            >
+                                <option value="0" disabled selected>{{$t('choose_an_option')}}</option>                                    
+                                <option value="1">Owner</option>
+                                <option value="2">Agent</option>                                
+                            </select> 
                         </div>
                     </div>
 

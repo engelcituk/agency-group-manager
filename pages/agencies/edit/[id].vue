@@ -61,14 +61,15 @@
 		<CustomContainer class=" p-8 ">
             <div class="flex justify-between items-center pb-4">
                 <div class="left-element text-left">
-                    <CustomButton
-						class="!bg-[#4CB8C4] !py-1 text-white"
-						icon
-					>
-                        <NuxtLink :to="`/agencies/${route.params.id}`" class="flex-center gap-1">
-                            <span class="material-symbols-outlined">arrow_back</span>                        
-                        </NuxtLink>                                                    														
-					</CustomButton>
+                 
+                    <NuxtLink :to="`/agencies/${route.params.id}`" class="flex-center gap-1">
+                        <CustomButton
+                            class="!bg-[#4CB8C4] !py-1 text-white"
+                            icon
+                        >
+                            <span class="material-symbols-outlined">arrow_back</span>                                                   														
+                        </CustomButton>                     
+                    </NuxtLink>
                 </div>
           
             </div>

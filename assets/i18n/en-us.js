@@ -294,4 +294,6 @@ export default {
   commercial_email: 'Commercial Email',
   choose_a_country: 'Choose a Country',
   choose_an_option: 'Choose an option',
+  agent_updated_successfully: 'Agent Updated successfully',
+  update: 'Update',
 }

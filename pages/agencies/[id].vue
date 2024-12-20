@@ -89,27 +89,30 @@
 		<CustomContainer class=" p-8 ">
             <div class="flex justify-between items-center pb-4">              
                 <div class="left-element flex items-center space-x-4 text-lef">
-                    <CustomButton
-						class="!bg-[#4CB8C4] !py-1 text-white"
-						icon
-					>
+                                     
                         <NuxtLink :to="`/agencies/`" class="flex-center gap-1">
-                            <span class="material-symbols-outlined">arrow_back</span>                        
+                            <CustomButton
+                                class="!bg-[#4CB8C4] !py-1 text-white"
+                                icon
+                            >                                
+                                <span class="material-symbols-outlined">arrow_back</span>                                                                                                          														
+                            </CustomButton>                      
                         </NuxtLink>                                                    														
-					</CustomButton>
+					
                     <h2 class="text-gray-900 font-semibold text-lg">{{  agency?.commercialName }}</h2>                    
                 </div>
 
                 <div class="right-element text-right">
-                    <CustomButton
-                        class=" !py-1 text-white"
-                        icon
-                        style="color: #4CB8C4;"
-                >						
-                        <NuxtLink :to="`/agencies/edit/${route.params.id}`" class="flex-center gap-1">
-                            <span>{{ $t('edit') }}</span>                    
-                        </NuxtLink> 
-					</CustomButton>
+             
+                    <NuxtLink :to="`/agencies/edit/${route.params.id}`" class="flex-center gap-1">
+                        <CustomButton
+                            class="text-white p-1"
+                            icon
+                            style="color: #4CB8C4;"
+                        >                                
+                            <span>{{ $t('edit') }}</span>
+                        </CustomButton>                      
+                    </NuxtLink> 
                 </div>
             </div>
             

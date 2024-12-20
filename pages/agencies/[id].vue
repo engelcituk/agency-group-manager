@@ -287,9 +287,15 @@
                     <TabPanel :value="1">
                         <form  @submit.prevent="filterAgents">
                             <div class="flex justify-end mb-5">
-                                <button class="px-4 py-2 bg-[#4CB8C4] text-white rounded hover:bg-blue-600">
-                                    {{$t('add_agent')}}
-                                </button>
+                              
+                                <NuxtLink :to="`/agencies/create-agent/${route.params.id}`"  class="flex-center gap-1">
+                                    <CustomButton
+                                        class="text-white p-1 !bg-[#4CB8C4]"
+                                        icon                                        
+                                    >                                
+                                        {{$t('add_agent')}}
+                                    </CustomButton>                      
+                                </NuxtLink> 
                             </div>
 
                             <div class="bg-[#4CB8C4] text-white rounded p-5 mt-2">                

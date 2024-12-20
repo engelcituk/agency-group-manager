@@ -60,7 +60,8 @@
         
 		<CustomContainer class=" p-8 ">
             <div class="flex justify-between items-center pb-4">
-                <div class="left-element text-left">
+                
+                <div class="left-element flex items-center space-x-4 text-lef">
                  
                     <NuxtLink :to="`/agencies/${route.params.id}`" class="flex-center gap-1">
                         <CustomButton
@@ -70,6 +71,7 @@
                             <span class="material-symbols-outlined">arrow_back</span>                                                   														
                         </CustomButton>                     
                     </NuxtLink>
+                    <h2 class="text-gray-900 font-semibold text-lg">{{  agency?.commercialName }}</h2> 
                 </div>
           
             </div>

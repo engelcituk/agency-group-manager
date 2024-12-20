@@ -297,4 +297,6 @@ export default {
   agent_updated_successfully: 'Agent Updated successfully',
   update: 'Update',
   add_agent: 'Add Agent',
+  add_new_agent: 'Add New Agent',
+
 }

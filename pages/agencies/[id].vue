@@ -286,8 +286,13 @@
                     </TabPanel>
                     <TabPanel :value="1">
                         <form  @submit.prevent="filterAgents">
-                            <div class="bg-[#4CB8C4] text-white rounded p-5 mt-2">
-                        
+                            <div class="flex justify-end mb-5">
+                                <button class="px-4 py-2 bg-[#4CB8C4] text-white rounded hover:bg-blue-600">
+                                    {{$t('add_agent')}}
+                                </button>
+                            </div>
+
+                            <div class="bg-[#4CB8C4] text-white rounded p-5 mt-2">                
                                 <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 items-cente mt-4">
                                     <div>
                                         <CustomInput

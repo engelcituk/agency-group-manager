@@ -294,5 +294,6 @@ export default {
   choose_an_option: 'Elija una opción',
   agent_updated_successfully: 'Agente actualizado correctamente',
   update: 'Actualización',
+  add_agent: 'Add Agent'
 
 }

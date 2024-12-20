@@ -80,14 +80,12 @@
                     </NuxtLink>                                                    														
 				
                     <h2 class="text-gray-900 font-semibold">{{  $t('edit') }} {{ $t('agent') }}</h2>                    
-                </div>
-            
+                </div>            
             </div>
          
             <div class="container mx-auto bg-white p-4" v-if="agent">
                 <form  @submit.prevent="updateAgent">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <!-- Primer div -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">                        
                         <div class="text-gray-900 p-4">
                             <CustomInput
                                 v-model="agent.firstName"
@@ -96,8 +94,7 @@
                                 @clear="agent.firstName = ''"
                             />
                         </div>
-
-                        <!-- Segundo div -->
+                        
                         <div class=" text-gray-900 p-4 ">
                             <CustomInput
                                 v-model="agent.lastName"
@@ -106,8 +103,7 @@
                                 @clear="agent.lastName = ''"
                             />
                         </div>
-
-                        <!-- Tercer div -->
+                        
                         <div class=" text-gray-900 p-4 ">
                             <CustomInput
                                 v-model="agent.phone"
@@ -118,8 +114,7 @@
                             />                    
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <!-- Primer div -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">                        
                         <div class="text-gray-900 p-4 ">
                             <CustomInput
                                 v-model="agent.mobile"
@@ -129,8 +124,7 @@
                                 type="number"
                             /> 
                         </div>
-
-                        <!-- Segundo div -->
+                        
                         <div class=" text-gray-900 p-4 ">
                             <CustomInput
                                 v-model="agent.email"

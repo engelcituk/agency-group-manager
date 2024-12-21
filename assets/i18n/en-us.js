@@ -302,6 +302,7 @@ export default {
   add_new_agent: 'Add New Agent',
   add_agency: 'Add Agency',
   new_agency: 'New Agency',
+  agency_created_successfully: 'Agency created successfully',
   agent_created_successfully: 'Agent created successfully',
   maximum_length_of_10_digits_for_phone : 'Maximum length of 10 digits for Phone',
   maximum_length_of_10_digits_for_mobile : 'Longitud máxima de 10 dígitos para Móvil'

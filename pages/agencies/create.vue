@@ -43,13 +43,32 @@
 
     const createAgency = async ()=> {
         const payload = toRaw(agency.value)
-        console.log('update', payload)
-        return
         startFullScreenLoading()
-
-        const { status, data } = await http(`/api/agencies/saveAgency/`, payload)
-
-        stopFullScreenLoading()            
+        
+        const { status } = await http(`/api/agencies/saveAgency/`, {
+            method: 'POST', 
+            body: payload, 
+        })
+        if( status){            
+            toast.add({ severity: 'success', summary: t('update'), detail: t('agency_created_successfully'), life: 3000 })
+            agency.value = {
+                commercialName: '',
+                businessName: '',
+                commercialEmail: '',
+                commercialPhone: '',
+                agencyGroupId: '',
+                countryPlaceId: '',
+                statePlace: '',
+                cityPlace: '',
+                address: '',
+                zipCode: '',
+                documentTypeId: '',
+                documentNumber: '',
+                useCommissionModel: false,
+                useCommissionDiscount: false,
+            }
+        }
+        stopFullScreenLoading()           
     }
 
     onMounted(async () => {    

@@ -57,8 +57,17 @@
             body: payload, 
         })
 
-        if( status){            
+        if( status ){            
             toast.add({ severity: 'success', summary: t('create'), detail: t('agent_created_successfully'), life: 3000 })
+            agent.value = {
+                firstName: '',
+                lastName: '',
+                phone: '',
+                mobile: '',
+                email: '',
+                profileTypeId: '',
+            }
+            // router.push({ path: `/agencies/${ route.params.id }`, query: { tab: 1 } })
         }
         stopFullScreenLoading()
     }

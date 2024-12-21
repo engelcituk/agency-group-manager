@@ -294,13 +294,15 @@ export default {
   commercial_email: 'Commercial Email',
   choose_a_country: 'Choose a Country',
   choose_an_option: 'Choose an option',
+  agency_updated_successfully: 'Agency Updated successfully',
   agent_updated_successfully: 'Agent Updated successfully',
   update: 'Update',
   create: 'Create',
   add_agent: 'Add Agent',
   add_new_agent: 'Add New Agent',
+  add_agency: 'Add Agency',
+  new_agency: 'New Agency',
   agent_created_successfully: 'Agent created successfully',
   maximum_length_of_10_digits_for_phone : 'Maximum length of 10 digits for Phone',
   maximum_length_of_10_digits_for_mobile : 'Longitud máxima de 10 dígitos para Móvil'
-
 }

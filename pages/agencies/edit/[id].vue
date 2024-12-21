@@ -7,8 +7,13 @@
     const route = useRoute()
     const agency = ref({})
     const countries = ref([])
-    const country = ref(null)
 
+    const agencyGroups = ref([
+        {id: 1, name: 'EUROPE'},
+        {id: 2, name: 'LATIN AMERICA'},
+        {id: 3, name: 'MEXICO'},
+        {id: 4, name: 'UNITED STATES & CANADA'},      
+    ])
 
     const getAgencyById = async () => {
         startFullScreenLoading()
@@ -40,9 +45,14 @@
         console.log('update', payload)
         startFullScreenLoading()
 
-        const { status, data } = await http(`/api/agencies/updateAgency/`, payload)
-
-        stopFullScreenLoading()            
+        const { status } = await http(`/api/agencies/updateAgency/`, {
+            method: 'PUT', 
+            body: payload, 
+        })
+        if( status){            
+            toast.add({ severity: 'success', summary: t('update'), detail: t('agency_updated_successfully'), life: 3000 });
+        }
+        stopFullScreenLoading()         
       
     }
 
@@ -112,14 +122,19 @@
                                 :show-clear-button="true"
                                 @clear="agency.commercialPhone = ''"
                             />
-                        </div>
-                        <div class="text-gray-900 py-2 ">
-                            <CustomInput
-                                v-model="agency.commercialName"
-                                :label="$t('agency_group')"
-                                :show-clear-button="true"
-                                @clear="agency.commercialName = ''"
-                            />
+                        </div>                  
+                        <div class="text-gray-900">
+                            <label for="country" class="block text-[1rem] text-gray-900">{{ $t('agency_group') }} </label>
+                            <select 
+                                v-model="agency.agencyGroupId"
+                                id="country" 
+                                class="w-full border-b-2 border-gray-800 bg-transparent focus:outline-none focus:border-black text-gray-900"
+                            >
+                            <option value="" disabled selected>{{ $t('choose_an_option') }}</option>
+                                <option v-for="group in agencyGroups" :key="group.id" :value="group.id">
+                                    {{ group.name }}
+                                </option>
+                            </select>                            
                         </div>
                     </div>
 

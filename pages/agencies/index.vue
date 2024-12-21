@@ -25,18 +25,6 @@ const filters = ref({
 })
 
 
-const fetchCountries = async () => {
-	const data = await $fetch('/api/countries', { server: false })
-	const allCountries = JSON.parse(JSON.stringify(data))
-	const commonCountries = data.filter(country => ['MX', 'US', 'CA'].includes(country.code))
-		.map(country => {
-			country.suggested = true
-			country.code = country.code + '_'
-			return country
-		})
-	countries.value = commonCountries.concat(allCountries)	
-}
-
 const getAgencies = async () => {
 	startFullScreenLoading()
 	const filter = {
@@ -95,6 +83,17 @@ onMounted(async () => {
 	<div class="flex-1 max-w-7xl">
 	
 		<CustomContainer class="bg-white p-8 shadow-md">
+			<div class="flex justify-end mb-5">                              
+				<NuxtLink :to="`/agencies/create`"  class="flex-center gap-1">
+					<CustomButton
+						class="text-white p-1 !bg-[#4CB8C4]"
+						icon                                        
+					>                                
+						{{$t('add_agency')}}
+					</CustomButton>                      
+				</NuxtLink> 
+			</div>
+
 			<div class="[background:transparent] !border border-[--secondary-bg-color] text-gray-700 text-xs rounded p-2">
 				<div
 					class="flex justify-between cursor-pointer"

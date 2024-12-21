@@ -1,7 +1,8 @@
 export default defineEventHandler(async (event) => {
     const config = useRuntimeConfig(event)
     try {    
-        const body = await readBody(event)             
+        const body = await readBody(event)     
+        
         const updatedAgency = await $fetch('Agency/UpdateAgency', {
             baseURL: config.agentsUrl,
             method: 'PUT', 

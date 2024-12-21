@@ -1,13 +1,17 @@
 export default defineEventHandler(async (event) => {
-    const config = useRuntimeConfig(event)    
+    const config = useRuntimeConfig(event)
+    const body = await readBody(event)
+    
     try {    
         const body = await readBody(event)             
-        const updatedAgent = await $fetch('Agent/UpdateAgent', {
+        const agentCreated = await $fetch('Agent/CreateAgent', {
             baseURL: config.agentsUrl,
-            method: 'PUT', 
+            method: 'POST', 
             body, 
         })
-        return { status: true, data: updatedAgent }
+        console.log(agentCreated)
+
+        return { status: true, data: agentCreated }
     } catch (error) {
         console.error(error)
         return { status: false, msg: 'Failed to update agent', data: null, error }

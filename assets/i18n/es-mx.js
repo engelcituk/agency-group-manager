@@ -294,7 +294,11 @@ export default {
   choose_an_option: 'Elija una opción',
   agent_updated_successfully: 'Agente actualizado correctamente',
   update: 'Actualización',
+  create: 'Creación',
   add_agent: 'Crear Agente',
   add_new_agent: 'Crear Nuevo Agente',
+  agent_created_successfully: 'Agente creado correctamente',
+  maximum_length_of_10_digits_for_phone : 'Longitud máxima de 10 dígitos para el teléfono.',
+  maximum_length_of_10_digits_for_mobile : 'Longitud máxima de 10 dígitos para el teléfono.'
 
 }

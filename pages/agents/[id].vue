@@ -4,7 +4,7 @@
     import { ref, onMounted } from 'vue'
     import { useI18n } from 'vue-i18n'
     const { startFullScreenLoading, stopFullScreenLoading } = useFullScreenLoadingStore()
-    import { useToast } from "primevue/usetoast";
+    import { useToast } from 'primevue/usetoast'
     const route = useRoute()
     const router = useRouter()
     const { t } = useI18n()

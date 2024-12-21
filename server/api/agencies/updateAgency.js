@@ -1,7 +1,5 @@
 export default defineEventHandler(async (event) => {
     const config = useRuntimeConfig(event)
-    console.log('body')   
-
     try {    
         const body = await readBody(event)     
         console.log(body)   

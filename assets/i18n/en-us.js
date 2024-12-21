@@ -296,7 +296,11 @@ export default {
   choose_an_option: 'Choose an option',
   agent_updated_successfully: 'Agent Updated successfully',
   update: 'Update',
+  create: 'Create',
   add_agent: 'Add Agent',
   add_new_agent: 'Add New Agent',
+  agent_created_successfully: 'Agent created successfully',
+  maximum_length_of_10_digits_for_phone : 'Maximum length of 10 digits for Phone',
+  maximum_length_of_10_digits_for_mobile : 'Longitud máxima de 10 dígitos para Móvil'
 
 }
